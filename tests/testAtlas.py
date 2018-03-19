@@ -14,16 +14,34 @@ def main():
     #pass the file variable to the AirportAtlas class to instantiate the dictionary.
     #returned value is assigned to the variable name 'atlas'
     atlasOfAirports = airportAtlas.AirportAtlas(file)
+    
+    
     #Assign value to the variable 'code'
     code = "DUB"
     #Pass the code variable to the .getAirport method to access the dictionary
-    atlasOfAirports.getAirport(code)
-    print(AirportAtlas.greatCircleDist(53.421333, -6.270075, 51.4775, -0.461389))
+    print(atlasOfAirports.getAirport(code))
+    
+    #Checking if greatCircleDist method works
+    print(AirportAtlas.greatCircleDist(40.639751, -73.778925,53.421333, -6.270075))
     code1 = "DUB"
-    code2 = "LHR"
+    code2 = "JFK"
+    
+    #Checking if getDistanceBetweenAirports method works
     print(atlasOfAirports.getDistanceBetweenAirports(code1, code2))
     
+    #Checking to see if findAirportbyName method works
+    name = 'Dublin'
+    print(atlasOfAirports.findAirportbyName(name))
     
+    #Check cvsFile error handler
+    file = "this/is/not/a/file"
+    atlasOfAirports = airportAtlas.AirportAtlas(file)
+    #Check  code error handler
+    code = "dub"
+    print(atlasOfAirports.getAirport(code))
+    #Check getAirportbyName error handler
+    name = 'bananas'
+    print(atlasOfAirports.findAirportbyName(name))
     
 if __name__ == '__main__':
     main()
