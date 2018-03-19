@@ -17,7 +17,12 @@ def main():
     #Assign value to the variable 'code'
     code = "DUB"
     #Pass the code variable to the .getAirport method to access the dictionary
-    print(atlasOfAirports.getAirport(code))
+    atlasOfAirports.getAirport(code)
+    print(AirportAtlas.greatCircleDist(53.421333, -6.270075, 51.4775, -0.461389))
+    code1 = "DUB"
+    code2 = "LHR"
+    print(atlasOfAirports.getDistanceBetweenAirports(code1, code2))
+    
     
     
 if __name__ == '__main__':
