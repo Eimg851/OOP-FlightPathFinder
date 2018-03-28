@@ -24,10 +24,10 @@ def main():
     #Checking if greatCircleDist method works
     print(AirportAtlas.greatCircleDist(40.639751, -73.778925,53.421333, -6.270075))
     code1 = "DUB"
-    code2 = "JFK"
+    code2 = "AAL"
     
     #Checking if getDistanceBetweenAirports method works
-    print(atlasOfAirports.getDistanceBetweenAirports(code1, code2))
+    print('Distance between, ',code1,' and ', code2,' is ',atlasOfAirports.getDistanceBetweenAirports(code1, code2))
     
     #Checking to see if findAirportbyName method works
     name = 'Dublin'

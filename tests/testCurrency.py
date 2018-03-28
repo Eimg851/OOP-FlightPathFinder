@@ -3,7 +3,8 @@ Created on 19 Mar 2018
 
 @author: Eimg
 '''
-from path_finder import currencyDict
+from path_finder import currencyDict, routePlanner
+from path_finder.routePlanner import *
 
 def main():
     #assign the csv file to variable named 'file'
@@ -12,6 +13,11 @@ def main():
     #returned value is assigned to the variable name 'atlas'
     currency = currencyDict.Currency(file)
     print(currency.currencyDict["Australia"])
+    
+    code1 = 'DUB'
+    code2 = 'SYD'
+    cost = routePlanner.getCurrency(code1)
+    print(cost)
     
 if __name__ == '__main__':
     main()

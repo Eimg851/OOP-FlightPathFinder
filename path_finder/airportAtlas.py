@@ -55,26 +55,21 @@ class AirportAtlas:
         """
         Finds the distance between two airports using their geographical co-ordinates
         """
-        #Find difference in long1 and long 2
-        long = long1 - long2
-        
-        #get value of angles for lat and long values
-        angle1 = getAngles(lat1)
-        angle2 = getAngles(lat2)
-        
         #Convert angles to radians
-        lat1Radians = getRadians(angle1)
-        lat2Radians = getRadians(angle2)
-        lateralDist = getRadians(long)
-        
+        lat1Radians = getRadians(lat1)
+        lat2Radians = getRadians(lat2)
+        long1Radians = getRadians(long1)
+        long2Radians = getRadians(long2)
+        longDis = long2Radians - long1Radians
+   
         #Assign value to earthRadians
         earthRadians = 6371
 
-        #Comput first part of formula
-        part1 = sin(lat1Radians)*sin(lat2Radians)*cos(lateralDist)
+        #Compute first part of formula
+        part1 = sin(lat1Radians)*sin(lat2Radians)
         #Compute second part of formula
-        part2 = cos(lat1Radians)*cos(lat2Radians)
-        #Add first two parts of formular
+        part2 = cos(lat1Radians)*cos(lat2Radians)*cos(longDis)
+        #Add first two parts of formula
         part3 = (part1 + part2)
         #getting arc cosine of formula before converting to km
         part4 = math.acos(part3)

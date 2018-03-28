@@ -5,6 +5,7 @@ Created on 19 Mar 2018
 '''
 import csv
 from path_finder.currencyClass import *
+from errorHandler import isValidCode
 
 class Currency:
     """
@@ -31,3 +32,13 @@ class Currency:
         except IOError:
             print("Could not read file:", csvFile)
         return self
+    
+    def getCurrency(self, code):
+        """
+        Returns airport objects stored in a Dictionary
+        """
+        if isValidCode(code) == True:
+            #access the dictionary using the code as a key
+            return(self.airportDict[code].Currency)
+        else:
+            return("You have not entered a valid code.")
