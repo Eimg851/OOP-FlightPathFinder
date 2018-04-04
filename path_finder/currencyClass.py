@@ -11,11 +11,6 @@ class Currency:
     def __init__(self, currencyInfo=[]):
         self.Country= currencyInfo[0]
         self.Currency = currencyInfo[14]
-        return self
         
     def __str__(self):
         return "Contry: %s\nCurrency: %s" % (self.Country, self.Currency)
-    
-class currency(Currency):
-    def __init__(self, currencyInfo=[]):
-        Currency.__init__(self, currencyInfo)  

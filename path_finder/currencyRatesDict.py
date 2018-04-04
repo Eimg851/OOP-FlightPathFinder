@@ -5,6 +5,7 @@ Created on 19 Mar 2018
 '''
 from path_finder.currencyRatesClass import *
 import csv
+from path_finder.currencyClass import Currency
 
 class CurrencyRates:
     """
@@ -23,7 +24,7 @@ class CurrencyRates:
                 reader = csv.reader(csvFile)
                 for row in reader:
                     #pass each line in csv file to the airport constructor to create an Airport instance
-                    createClass = Rates(row)
+                    createClass = CurrencyConverter(row)
                     #Add the airport instance to the Dictionary using the IATA code as the key
                     self.conversionDict[createClass.Code]= createClass
                 #Checking if dictionary is storing the objects

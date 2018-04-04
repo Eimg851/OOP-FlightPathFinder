@@ -13,11 +13,7 @@ class CurrencyConverter:
         self.Code = conversionInfo[1]
         self.toEuroRate = conversionInfo[2]
         self.fromEuroRate = conversionInfo[3]
-        return self
         
     def __str__(self):
         return "Name: %s\nCode: %s\ntoEuroRate: %s\nfromEuroRate: %s" % (self.Name, self.Code, self.toEuroRate, self.fromEuroRate)
     
-class Rates(CurrencyConverter):
-    def __init__(self, conversionInfo=[]):
-        CurrencyConverter.__init__(self, conversionInfo)  

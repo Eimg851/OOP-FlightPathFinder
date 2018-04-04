@@ -7,7 +7,7 @@ import csv
 from path_finder.currencyClass import *
 from errorHandler import isValidCode
 
-class Currency:
+class CurrencyDict:
     """
     Holds information on all currencies and allow us to look up in a variety of ways
     """
@@ -24,7 +24,7 @@ class Currency:
                 reader = csv.reader(csvFile)
                 for row in reader:
                     #pass each line in csv file to the airport constructor to create an Airport instance
-                    createClass = currency(row)
+                    createClass = Currency(row)
                     #Add the airport instance to the Dictionary using the IATA code as the key
                     self.currencyDict[createClass.Country]= createClass
                 #Checking if dictionary is storing the objects
@@ -37,8 +37,8 @@ class Currency:
         """
         Returns airport objects stored in a Dictionary
         """
-        if isValidCode(code) == True:
+        #if isValidCode(code) == True:
             #access the dictionary using the code as a key
-            return(self.airportDict[code].Currency)
-        else:
-            return("You have not entered a valid code.")
+        return(self.currencyDict[code].Currency)
+        #else:
+         #   return("You have not entered a valid code.")

@@ -11,7 +11,7 @@ def main():
     #pass the file variable to the AirportAtlas class to instantiate the dictionary.
     #returned value is assigned to the variable name 'atlas'
     conversionRates = currencyRatesDict.CurrencyRates(file)
-    print(conversionRates.conversionDict["NZD"].toEuroRate)
+    print(conversionRates.conversionDict["GBP"].toEuroRate)
     
 if __name__ == '__main__':
     main()

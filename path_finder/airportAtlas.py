@@ -24,20 +24,19 @@ class AirportAtlas:
  
     def loadData(self, csvFile):
         #Create the dictionary
-        #airportDict = {}
         #open the csv file and read line by line
         try:
             with open(csvFile) as csvFile:
                 reader = csv.reader(csvFile)
                 for row in reader:
                     #pass each line in csv file to the airport constructor to create an Airport instance
-                    createClass = airport(row)
+                    createClass = Airport(row)
                     #Add the airport instance to the Dictionary using the IATA code as the key
                     self.airportDict[createClass.Code]= createClass
                 #Checking if dictionary is storing the objects
                 #print(self.airportDict["DUB"])
-        except IOError:
-            print("Could not read file:", csvFile)
+        except IOError as e:
+            print(e)
         return self
         
     def getAirport(self, code):
@@ -66,9 +65,9 @@ class AirportAtlas:
         earthRadians = 6371
 
         #Compute first part of formula
-        part1 = sin(lat1Radians)*sin(lat2Radians)
+        part1 = math.sin(lat1Radians)*math.sin(lat2Radians)
         #Compute second part of formula
-        part2 = cos(lat1Radians)*cos(lat2Radians)*cos(longDis)
+        part2 = math.cos(lat1Radians)*math.cos(lat2Radians)*math.cos(longDis)
         #Add first two parts of formula
         part3 = (part1 + part2)
         #getting arc cosine of formula before converting to km
@@ -99,4 +98,6 @@ class AirportAtlas:
                 return self.airportDict[key]
         #error handling if airport is not found
         return('Airport not found')
+    
+
         

@@ -27,11 +27,15 @@ def main():
     code2 = "AAL"
     
     #Checking if getDistanceBetweenAirports method works
-    print('Distance between, ',code1,' and ', code2,' is ',atlasOfAirports.getDistanceBetweenAirports(code1, code2))
+    print('Distance between ',code1,' and ', code2,' is ',atlasOfAirports.getDistanceBetweenAirports(code1, code2))
     
     #Checking to see if findAirportbyName method works
     name = 'Dublin'
     print(atlasOfAirports.findAirportbyName(name))
+    
+    #check if singleLegCostWorks
+    cost = atlasOfAirports.singleLegCost(code1, code2)
+    print(cost)
     
     #Check cvsFile error handler
     file = "this/is/not/a/file"
@@ -42,6 +46,8 @@ def main():
     #Check getAirportbyName error handler
     name = 'bananas'
     print(atlasOfAirports.findAirportbyName(name))
+    
+    
     
 if __name__ == '__main__':
     main()

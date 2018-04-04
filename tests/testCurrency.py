@@ -14,10 +14,12 @@ def main():
     currency = currencyDict.Currency(file)
     print(currency.currencyDict["Australia"])
     
-    code1 = 'DUB'
-    code2 = 'SYD'
-    cost = routePlanner.getCurrency(code1)
-    print(cost)
+    code1 = 'Ireland'
+    curr1 = currency.getCurrency(code1)
+    code2 = 'Australia'
+    curr2 = currency.getCurrency(code2)
+    print(code1, ' uses: ',curr1)
+    print(code2, ' uses: ',curr2)
     
 if __name__ == '__main__':
     main()
