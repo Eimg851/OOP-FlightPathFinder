@@ -81,9 +81,9 @@ class Application:
 if __name__ == '__main__':
     #path_to_test = sys.argv[1]
     paths = {
-        'currency': '/Users/Eimg/eclipse-Data_Structures_And_Algorithms/flight_path_finder/input/countrycurrency.csv', 
-        'airports': '/Users/Eimg/eclipse-Data_Structures_And_Algorithms/flight_path_finder/input/airport.csv', 
-        'conversion': '/Users/Eimg/eclipse-Data_Structures_And_Algorithms/flight_path_finder/input/currencyrates.csv'
+        'currency': '..//input/countrycurrency.csv', 
+        'airports': '..//input/airport.csv', 
+        'conversion': '..//input/currencyrates.csv'
         }
     app = Application(paths)
     app.run()
