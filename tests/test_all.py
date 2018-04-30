@@ -15,7 +15,6 @@ from path_finder.airport import Airport
 from path_finder.aircraft import Aircraft
 from path_finder.currencyRatesClass import CurrencyConverter
 from path_finder.undirected_weighted_graph import undirectedWeightedGraph
-from path_finder.queue import Queue
 from path_finder.errorHandler import isValidCode, trimWhitespace
 sys.path.append('.')
 import pytest
@@ -24,10 +23,10 @@ from path_finder.airportAtlas import AirportAtlas
 from path_finder.currencyRatesDict import CurrencyRates
 from path_finder.aircraftDict import aircrafts
 from path_finder.main import Application
-from Set_ADT import *
-from weightedDirectedGraph import *
-from queue import *
-from undirected_weighted_graph import *
+from path_finder.Set_ADT import Set
+from path_finder.weightedDirectedGraph import directedWeightedGraph
+from path_finder.queue import Queue
+
 
 @pytest.fixture
 class TestPathFinder(unittest.TestCase):
