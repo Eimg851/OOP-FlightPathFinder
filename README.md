@@ -35,5 +35,5 @@ Running the Tests
 From the project MAIN directory (in Terminal), run this command
 
 ```
-python -m unittest tests
+python -m unittest tests.test_all
 ```
