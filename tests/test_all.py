@@ -24,10 +24,10 @@ from path_finder.airportAtlas import AirportAtlas
 from path_finder.currencyRatesDict import CurrencyRates
 from path_finder.aircraftDict import aircrafts
 from path_finder.main import Application
-from Set_ADT import *
-from weightedDirectedGraph import *
-from queue import *
-from undirected_weighted_graph import *
+from path_finder.Set_ADT import *
+from path_finder.weightedDirectedGraph import *
+from path_finder.queue import *
+from path_finder.undirected_weighted_graph import *
 
 @pytest.fixture
 class TestPathFinder(unittest.TestCase):
