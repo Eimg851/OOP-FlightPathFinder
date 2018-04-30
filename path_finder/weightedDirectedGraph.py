@@ -42,7 +42,7 @@ class directedWeightedGraph:
         string += "Weights: "+ str(self.weight)+ "\n"
         string += "Total number of nodes on this graph: "+str(len(self.vertices))
         return string
-  """      
+"""      
     def dijkstra(self, start):
         # initializations
         S = set()
