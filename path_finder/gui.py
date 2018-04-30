@@ -3,7 +3,7 @@ Created on 29 Apr 2018
 
 @author: Eimg
 '''
-from main import *
+from path_finder.main import *
 #from Tkinter import *
 
 #root = Tk()

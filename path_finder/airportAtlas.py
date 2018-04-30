@@ -4,8 +4,8 @@ Created on 18 Mar 2018
 @author: Eimg
 
 '''
-from airport import *
-from errorHandler import isValidCode
+from path_finder.airport import *
+from path_finder.errorHandler import isValidCode
 import math
 import csv
 

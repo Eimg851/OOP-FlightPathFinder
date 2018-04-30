@@ -3,7 +3,7 @@ Created on 11 Apr 2018
 
 @author: Eimg
 '''
-from aircraft import Aircraft
+from path_finder.aircraft import Aircraft
 import csv
 
 class aircrafts:

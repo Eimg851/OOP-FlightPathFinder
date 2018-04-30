@@ -4,8 +4,8 @@ Created on 19 Mar 2018
 @author: Eimg
 '''
 import csv
-from currencyClass import *
-from errorHandler import isValidCode
+from path_finder.currencyClass import *
+from path_finder.errorHandler import isValidCode
 
 class CurrencyDict:
     """

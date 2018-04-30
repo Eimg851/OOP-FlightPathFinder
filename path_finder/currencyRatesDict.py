@@ -3,9 +3,9 @@ Created on 19 Mar 2018
 
 @author: Eimg
 '''
-from currencyRatesClass import *
+from path_finder.currencyRatesClass import *
 import csv
-from currencyClass import Currency
+from path_finder.currencyClass import Currency
 
 class CurrencyRates:
     """
