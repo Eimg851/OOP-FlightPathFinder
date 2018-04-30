@@ -13,4 +13,7 @@ class Currency:
         self.Currency = currencyInfo[14]
         
     def __str__(self):
+        """
+        Returns the currency instance in human readable form
+        """
         return "Contry: %s\nCurrency: %s" % (self.Country, self.Currency)

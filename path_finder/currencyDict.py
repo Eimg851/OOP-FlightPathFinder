@@ -4,7 +4,7 @@ Created on 19 Mar 2018
 @author: Eimg
 '''
 import csv
-from path_finder.currencyClass import *
+from currencyClass import *
 from errorHandler import isValidCode
 
 class CurrencyDict:
@@ -14,31 +14,38 @@ class CurrencyDict:
     def __init__(self, csvFile):
         #Create the dictionary
         self.currencyDict = {}
-        #calling loadData method
         self.loadData(csvFile)
+        
  
     def loadData(self, csvFile):
-        #open the csv file and read line by line
+        """
+        Reads data from a csv file line by line and creates a dictionary to store currency instances
+        """
         try:
             with open(csvFile) as csvFile:
                 reader = csv.reader(csvFile)
+                print('\n*************************************************************************************\n')
+                print('Creating Currency Instances')
                 for row in reader:
-                    #pass each line in csv file to the airport constructor to create an Airport instance
-                    createClass = Currency(row)
-                    #Add the airport instance to the Dictionary using the IATA code as the key
-                    self.currencyDict[createClass.Country]= createClass
-                #Checking if dictionary is storing the objects
-                #print(self.airportDict["DUB"])
+                    if row[0] != 'name':
+                        #pass each line in csv file to the airport constructor to create an Airport instance
+                        createClass = Currency(row)
+                        #Check to see if the currency code is valid
+                        if isValidCode(createClass.Currency):
+                            #Add the currency instance to the Dictionary using the currency code as the key
+                            self.currencyDict[createClass.Country]= createClass
+                        else:
+                            #If code not valid, print error message to console.
+                            print('ERROR! Could not add',createClass.Country,'to Currency Look Up as no Currency provided.')
         except IOError:
             print("Could not read file:", csvFile)
+        #Log to console how many instance were created
+        print('Currency Look Up containing ', len(self.currencyDict), 'countries created.')
+        print('\n*************************************************************************************')
         return self
     
     def getCurrency(self, code):
         """
         Returns airport objects stored in a Dictionary
         """
-        #if isValidCode(code) == True:
-            #access the dictionary using the code as a key
         return(self.currencyDict[code].Currency)
-        #else:
-         #   return("You have not entered a valid code.")

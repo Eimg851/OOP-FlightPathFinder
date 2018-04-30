@@ -24,4 +24,7 @@ class Airport:
         self.timezone = airportInfo[11]
     
     def __str__(self):
+        """
+        Prints the airport instance in human readable form
+        """
         return "ID: %s,\nName: %s,\nCity: %s,\nCountry: %s,\nCode: %s,\nICAO: %s,\nlat: %s,\nlong: %s,\naltitude: %s,\noffsetHours: %s,\nDST: %s,\ntimezone: %s " % (self.ID, self.Name, self.City, self.Country, self.Code, self.ICAO, self.lat, self.long, self.altitude, self.offsetHours, self.DST, self.timezone)

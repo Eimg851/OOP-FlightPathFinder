@@ -15,5 +15,8 @@ class CurrencyConverter:
         self.fromEuroRate = conversionInfo[3]
         
     def __str__(self):
+        """
+        Returns the instance in human readable form
+        """
         return "Name: %s\nCode: %s\ntoEuroRate: %s\nfromEuroRate: %s" % (self.Name, self.Code, self.toEuroRate, self.fromEuroRate)
     
