@@ -3,19 +3,18 @@ Created on 4 Apr 2018
 
 @author: Eimg
 '''
-import currencyDict
-import airportAtlas
-import currencyRatesDict
-import aircraftDict
-import Set_ADT
-import weightedDirectedGraph
-import queue
-import undirected_weighted_graph
+from path_finder.currencyDict import *
+from path_finder.airportAtlas import *
+from path_finder.currencyRatesDict import *
+from path_finder.aircraftDict import *
+from path_finder.Set_ADT import *
+from path_finder.weightedDirectedGraph import *
+from path_finder.queue import *
+from path_finder.undirected_weighted_graph import *
 import csv
-from Set_ADT import Set
 import itertools
-from errorHandler import *
-import gui
+from path_finder.errorHandler import *
+from path_finder.gui import *
 
 class Journey:
     def __init__(self, application):
@@ -26,10 +25,10 @@ class Application:
     Application class: Application class creates the dictionaries and methods to plan journeys
     """
     def __init__(self, paths):
-        self.CurrencyLookUp = currencyDict.CurrencyDict(paths['currency'])
-        self.AirportLookUp = airportAtlas.AirportAtlas(paths['airports'])
-        self.ConversionRates = currencyRatesDict.CurrencyRates(paths['conversion'])
-        self.AircraftLookUp = aircraftDict.aircrafts(paths['aircraft'])
+        self.CurrencyLookUp = CurrencyDict(paths['currency'])
+        self.AirportLookUp = AirportAtlas(paths['airports'])
+        self.ConversionRates = CurrencyRates(paths['conversion'])
+        self.AircraftLookUp = aircrafts(paths['aircraft'])
         
     def run(self):
         """
@@ -74,7 +73,7 @@ class Application:
         Stores the list of airports on this route in a set and computes the cheapest path
         """
         #Creating a set to store the airports to be visited
-        itinerary = Set_ADT.Set()
+        itinerary = Set()
         #Store the first airports - i.e. the starting point in a variable
         start = listOfAirports[0]
         #Store the aircraft in a variable aircraft
@@ -121,7 +120,7 @@ class Application:
             #Store the route in a list
             FullRoute = []
             #Create a queue
-            Airports_to_Vists = queue.Queue()
+            Airports_to_Vists = Queue()
             #Add the starting airport to the list and the queue
             FullRoute.append(start)
             Airports_to_Vists.enqueue(start)
@@ -158,7 +157,7 @@ class Application:
         Creates and returns an undirected graph to store the distance between airport on the weighted edges. 
         """
         #Creates an instance of a weighted undirected graph and adds the list of airports as nodes
-        distanceOfTripGraph = undirected_weighted_graph.undirectedWeightedGraph(setOfAirports)
+        distanceOfTripGraph = undirectedWeightedGraph(setOfAirports)
         #Iterate over the nodes to avoid looping of nodes
         for i in range(0, len(setOfAirports)):
             for j in range(0, len(setOfAirports)):
@@ -173,7 +172,7 @@ class Application:
         Creates and returns a weighted directed graph that stores the cost of trips between each airport
         """
         #Create an instance of a weighted directed graph and add the list of airports as nodes
-        costOfTripGraph = weightedDirectedGraph.directedWeightedGraph(setOfAirports)
+        costOfTripGraph = directedWeightedGraph(setOfAirports)
         #Iterate over the nodes to avoid looping of nodes
         for i in range(0, len(setOfAirports)):
             for j in range(0, len(setOfAirports)):
@@ -208,7 +207,7 @@ class Application:
         Prints the cost of each leg of the route
         """ 
         #Creating a queue
-        FinalPath = queue.Queue()
+        FinalPath = Queue()
         #Adding the airports on this route to the queue
         for airport in range(0, len(route)):
                 FinalPath.enqueue(route[airport])
