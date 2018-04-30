@@ -16,7 +16,7 @@ Installation and Setup
 Run the following commands in Terminal:
 
 ```
-git clone https://github.com/Eimg851/OOP-TermProject-COMP20230.git && cd /path_finder
+git clone https://github.com/Eimg851/OOP-TermProject-COMP20230.git && cd /OOP-TermProject-COMP20230/path_finder
 pip install -r requirements.txt
 ```
 
@@ -32,8 +32,8 @@ python main.py
 Running the Tests
 ------------------
 
-From the project directory (in Terminal), run this command
+From the project MAIN directory (in Terminal), run this command
 
-```sh
+```
 python -m unittest tests
 ```
