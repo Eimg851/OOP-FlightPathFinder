@@ -16,7 +16,7 @@ Installation and Setup
 Run the following commands in Terminal:
 
 ```
-git clone https://github.com/Eimg851/OOP-TermProject-COMP20230.git && cd /OOP-TermProject-COMP20230/path_finder
+git clone https://github.com/Eimg851/OOP-TermProject-COMP20230.git && cd OOP-TermProject-COMP20230/path_finder
 pip install -r requirements.txt
 ```
 
